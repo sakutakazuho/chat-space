@@ -9,6 +9,11 @@ class GroupsController < ApplicationController
     @group.users << current_user
   end
 
+  def edit
+    set_group
+    @user= User.new
+  end
+
   def create
     @group = Group.new(group_params)
     if @group.save
