@@ -3,20 +3,24 @@ $(function(){
   function appendUser(user){
     if(user.name !== undefined){
       var html =`<div class="chat-group-user clearfix">
-                   <p class="chat-group-user__name">${user.name}</p>
-                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
-                   </div>
-                 </div>`
+
+                  <p class="chat-group-user__name">${user.name}</p>
+                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
+                  </div>
+                </div>`
     } else if(user.dataset.userName !== undefined) {
       var html =`<div class="chat-group-user clearfix">
-                   <p class="chat-group-user__name">${user.dataset.userName}</p>
-                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.dataset.userId}" data-user-name="${user.dataset.userName}">追加
-                   </div>
-                 </div>`
+                  <p class="chat-group-user__name">${user.dataset.userName}</p>
+                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.dataset.userId}" data-user-name="${user.dataset.userName}">追加
+                  </div>
+                </div>`
     } else {
       var html =`<div class="chat-group-user clearfix">
-                   <p class="chat-group-user__name">一致するユーザーがいません。</p>
-                 </div>`
+                  <p class="chat-group-user__name">一致するユーザーがいません。</p>
+                </div>`
+
+            
+
     }
     search_list.append(html);
   }
@@ -34,7 +38,11 @@ $(function(){
                 <p class="chat-group-user__name">${user.dataset.userName}</p>
                 <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${user.dataset.userId}" data-user-name="${user.dataset.userName}">削除
                 </div>
-               </div>`
+
+                </div>`
+
+               
+
     group_user_list.append(html);
   }
 
